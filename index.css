@@ -1,0 +1,219 @@
+html {
+  height: 100%;
+}
+body {
+  background: yellow;
+  min-height: 100%;
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+}
+/*****HEADER*****/
+h1,.intro-quote, #quote-box {
+  text-align: center;
+}
+h1 {
+  font-family: "Bitter";
+  font-size: 3.5em;
+}
+.intro-quote {
+  font-family: "Monsieur La Doulaise";
+  font-size: 2.5em;
+  margin-top: -40px;
+}
+.intro-quote-space {
+  margin: 5px;
+}
+.intro-quote span span{
+  opacity: 0;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  letter-spacing: -7px;
+}
+.intro-quote-animation {
+  animation: slideIn 1.2s ease-in-out forwards;
+}
+/*****CONTAINER*****/
+#container {
+  position: relative;
+  min-height: 100%;
+  overflow: auto;
+}
+#quote-box {
+  margin: 0px 150px 0px 150px;
+  padding-bottom: 25px;
+}
+.quote {
+  margin-top: 100px;
+  font-family: "Lato";
+  font-style: italic;
+  font-size: 1.4em;
+  min-height: 100px;
+}
+.quote p {
+  transition: all 0.2s;
+  animation: fadeIn 0.8s ease-in-out forwards;
+}
+.quote-text-animation {
+  opacity: 0;
+  animation: fadeOut 0.8s ease-in-out forwards;
+}
+.author {
+  font-family: "Vollkorn";
+  font-weight: bold;
+  font-style: italic;
+  min-height: 50px;
+}
+.author p {
+  font-size: 1.4em;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+.fa-twitter {
+  margin-top: 90px;
+  padding: 10px;
+  font-size: 30px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 20%;
+  background: #55ACEE;
+  color: white;
+  transition: all 0.2s;
+}
+.fa:hover {
+  transform: scale(1.1);
+}
+.quote-button {
+  position: relative;
+  cursor: pointer;
+  top: 50px;
+  height: 65px;
+  width: 225px;
+  color: black;
+  background-color: yellow;
+  padding: 10px;
+  transition-duration: 0.7s;
+  border-radius: 50px;
+  border: 3px solid #4d4d4d;
+  font-weight: bold;
+  font-size: 1.2em;
+  font-family: "Bitter";
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2), 0 6px 20px rgba(0,0,0,0.19);
+}
+.quote-button:hover {
+  filter: brightness(92%);
+  border: 3px solid #404040;
+}
+.quote-button:active {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+#bottom {
+  width: 100%;
+  position: absolute;
+}
+#bottom a {
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+}
+.footer {
+  font-size: 0.8em;
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+}
+/*****MEDIA QUERIES*****/
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2.5em;
+  }
+  .intro-quote {
+    font-size: 1.9em;
+  }
+  #quote-box {
+    margin: auto;
+  }
+  .quote {
+    min-height: 220px;
+    margin-top: 10px;
+    font-size: 1.3em;
+  }
+  .author {
+    min-height: 30px;
+  }
+}
+@media(max-width: 350px) {
+  h1 {
+    font-size: 2em;
+  }
+  .intro-quote {
+    font-size: 1.7em;
+  }
+}
+@media (min-width: 480px) and (max-width: 768px) {
+  #quote-box {
+    margin: auto;
+  }
+  .quote {
+    min-height: 150px;
+    margin-top: 50px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  #quote-box {
+    margin: auto;
+  }
+  .quote {
+    min-height: 120px;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1224px) {
+  #quote-box {
+    margin: auto;
+  }
+  .quote {
+    min-height: 80px;
+  }
+}
+/*****ANIMATIONS*****/
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  25% {
+    transform: translateY(20px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-10px);
+  }
+  75% {
+    transform: translateY(5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
