@@ -1,5 +1,5 @@
 window.onload = () => {
-  let quoteAPIUrl = "http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1";
+  let quoteAPIUrl = "https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1";
   let tweetAPIUrl = "https://twitter.com/intent/tweet?text=";
   let previousColor = 0;
   let randomQuote = "";
