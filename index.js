@@ -1,5 +1,5 @@
 window.onload = () => {
-  let quoteAPIUrl = "https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1";
+  let quoteAPIUrl = "https://api.quotable.io/random";
   let tweetAPIUrl = "https://twitter.com/intent/tweet?text=";
   let previousColor = 0;
   let randomQuote = "";
@@ -32,16 +32,17 @@ window.onload = () => {
     })
     .then((data) => {
       while (authorDiv.firstChild) {
+        quoteDiv.removeChild(quoteDiv.firstChild);
         authorDiv.removeChild(authorDiv.firstChild);
       }
-      quote = "";
-      author = "-" + data[0].title;
-      let temp = document.createElement("textarea");
-      temp.innerHTML = data[0].content;
-      quote = '"' + temp.value.slice(3,-5)+'"';
-      quoteDiv.innerHTML = data[0].content;
+      quote = data.content;
+      author = "-" + data.author;
       p = document.createElement("p");
-      authorDiv.appendChild(p).innerHTML = author;
+      p.textContent = quote;
+      quoteDiv.appendChild(p);
+      p = document.createElement("p");
+      p.textContent = author;
+      authorDiv.appendChild(p);
       randomQuote = quote;
       randomAuthor = author;
       document.querySelectorAll(".fa-twitter")[0].setAttribute("href", tweetAPIUrl + randomQuote + " " + randomAuthor);
